@@ -1,0 +1,33 @@
+{% extends 'oscar/checkout/preview.html' %}
+{% load currency_filters %}
+{% load thumbnail %}
+{% load i18n %}
+{% load purchase_info_tags %}
+{% load staticfiles %}
+
+{% block payment_details%}
+                 <div class="well well-success">
+                    <h4>{% trans "Payment details" %}</h4>
+                    {% if billing_address %}
+                    {% trans "Billing address" %}:
+                    <address>
+                        {% for field in billing_address.active_address_fields %}
+                            {{ field }}<br/>
+                        {% endfor %}
+                    </address>
+
+                    {% endif %}
+                    <div class="alert-actions">
+                        <a href="{% url 'checkout:payment-details' %}" class="btn">{% trans "Change payment details" %}</a>
+                    </div>
+                </div>
+{% endblock payment_details %}
+{% block payment_method %}
+                <div class="well well-success">
+                    <h4>{% trans "Payment method" %}</h4>
+                    <p>{% trans "Cash on Delivery" %}</p>
+                    <div class="alert-actions">
+                        <a href="{% url 'checkout:payment-method' %}" class="btn">{% trans "Change payment method" %}</a>
+                    </div>
+                </div>
+{% endblock payment_method%}

@@ -1,0 +1,140 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2014-10-12 20:01+0100\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=3; plural=(n==1?0:(((n%100>19)||((n%100==0)&&(n!=0)))?"
+"2:1));\n"
+
+#: forms.py:18
+msgid "Same as the shipping address"
+msgstr "Foloseste adresa de livrare"
+
+#: forms.py:19 forms.py:39
+msgid "Enter a new address"
+msgstr "Introduce o adresa noua"
+
+#: models.py:26 views.py:86 templates/cashondelivery/preview.html:28
+#: templates/dashboard/cashondelivery/transaction_detail.html:17
+#: templates/dashboard/cashondelivery/transaction_list.html:17
+msgid "Cash on Delivery"
+msgstr "Plata Ramburs"
+
+#: views.py:79
+msgid "Invalid submission"
+msgstr "Cerere invalida"
+
+#: templates/cashondelivery/payment_details.html:5
+#: templates/cashondelivery/preview.html:10
+msgid "Payment details"
+msgstr "Detalii plata"
+
+#: templates/cashondelivery/payment_details.html:12
+msgid "What address should the invoice be issued to?"
+msgstr "Ce adresa sa folosim pentru facturare?"
+
+#: templates/cashondelivery/payment_details.html:22
+msgid "You've chosen to pay cash on delivery."
+msgstr "Ai ales sa platesti la primirea coletului."
+
+#: templates/cashondelivery/payment_details.html:59
+msgid "Continue"
+msgstr "Continua"
+
+#: templates/cashondelivery/preview.html:12
+msgid "Billing address"
+msgstr "Adresa facturare"
+
+#: templates/cashondelivery/preview.html:21
+msgid "Change payment details"
+msgstr "Schimba detaliile de plata"
+
+#: templates/cashondelivery/preview.html:27
+msgid "Payment method"
+msgstr "Metoda de plata"
+
+#: templates/cashondelivery/preview.html:30
+msgid "Change payment method"
+msgstr "Schimba metoda de plata"
+
+#: templates/dashboard/cashondelivery/transaction_detail.html:7
+msgid "Cash on Delivery transaction"
+msgstr "Tranzactie plata ramburs"
+
+#: templates/dashboard/cashondelivery/transaction_detail.html:13
+#: templates/dashboard/cashondelivery/transaction_list.html:13
+msgid "Dashboard"
+msgstr "Panou de control"
+
+#: templates/dashboard/cashondelivery/transaction_detail.html:21
+#: templates/dashboard/cashondelivery/transaction_detail.html:27
+#, python-format
+msgid "Transaction %(reference)s"
+msgstr "Tranzactia %(reference)s"
+
+#: templates/dashboard/cashondelivery/transaction_detail.html:33
+msgid "Reference"
+msgstr "Referinta"
+
+#: templates/dashboard/cashondelivery/transaction_detail.html:34
+#: templates/dashboard/cashondelivery/transaction_list.html:40
+msgid "Date"
+msgstr "Data"
+
+#: templates/dashboard/cashondelivery/transaction_detail.html:35
+#: templates/dashboard/cashondelivery/transaction_list.html:35
+msgid "Method"
+msgstr "Metoda"
+
+#: templates/dashboard/cashondelivery/transaction_detail.html:36
+#: templates/dashboard/cashondelivery/transaction_list.html:37
+msgid "Amount"
+msgstr "Suma"
+
+#: templates/dashboard/cashondelivery/transaction_detail.html:37
+msgid "Currency"
+msgstr "Valuta"
+
+#: templates/dashboard/cashondelivery/transaction_detail.html:38
+#: templates/dashboard/cashondelivery/transaction_list.html:38
+msgid "Confirmed"
+msgstr "Confirmat"
+
+#: templates/dashboard/cashondelivery/transaction_detail.html:39
+#: templates/dashboard/cashondelivery/transaction_list.html:39
+msgid "Date confirmed"
+msgstr "Data confirmarii"
+
+#: templates/dashboard/cashondelivery/transaction_list.html:7
+#: templates/dashboard/cashondelivery/transaction_list.html:25
+msgid "Cash on Delivery transactions"
+msgstr "Tranzactii ramburs"
+
+#: templates/dashboard/cashondelivery/transaction_list.html:20
+msgid "Transactions"
+msgstr "Tranzactii"
+
+#: templates/dashboard/cashondelivery/transaction_list.html:34
+msgid "Reference hash"
+msgstr "Hash referinta"
+
+#: templates/dashboard/cashondelivery/transaction_list.html:36
+msgid "Order number"
+msgstr "Numar comanda"
+
+#: templates/dashboard/cashondelivery/transaction_list.html:59
+msgid "No transactions have been made yet."
+msgstr "Nu au fost efectuate tranzactii."

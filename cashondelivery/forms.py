@@ -1,4 +1,5 @@
 from django import forms
+from django.utils.translation import ugettext_lazy as _
 
 from oscar.apps.payment import forms as payment_forms
 from oscar.core.loading import get_class, get_classes, get_model
@@ -14,8 +15,8 @@ class BillingAddressForm(payment_forms.BillingAddressForm):
     """
     SAME_AS_SHIPPING, NEW_ADDRESS = 'same', 'new'
     CHOICES = (
-        (SAME_AS_SHIPPING, 'Same as the shipping address'),
-        (NEW_ADDRESS, 'Enter a new address'),
+        (SAME_AS_SHIPPING, _('Same as the shipping address')),
+        (NEW_ADDRESS, _('Enter a new address')),
     )
     same_as_shipping = forms.ChoiceField(
         widget=forms.RadioSelect, choices=CHOICES, initial=SAME_AS_SHIPPING)
@@ -35,7 +36,7 @@ class BillingAddressForm(payment_forms.BillingAddressForm):
         # 'same_as_shipping' field to have a certain value.
         if shipping_address is None:
             self.fields['same_as_shipping'].choices = (
-                (self.NEW_ADDRESS, 'Enter a new address'),)
+                (self.NEW_ADDRESS, _('Enter a new address')),)
             self.fields['same_as_shipping'].initial = self.NEW_ADDRESS
 
         # If using same address as shipping, we don't need require any of the

@@ -45,8 +45,8 @@
                         <td>{{ txn.method }}</td>
                         <td><a href="{% url 'dashboard:order-detail' number=txn.order_number %}">{{ txn.order_number|default:"-" }}</a></td>
                         <td>{{ txn.amount|currency|default:"-" }} {{ txn.currency }}</td>
-                        <td>{{ txn.confirmed|default:'-' }}</td>
-                        <td>{{ txn.date_confirmed|default:'-' }}</td>
+                        <td>{{ txn.confirmed }}</td>
+			<td>{% if txn.confirmed %}{{ txn.date_confirmed }}{% else %} - {% endif %}</td>
                         <td>{{ txn.date_created }}</td>
                     </tr>
                 {% endfor %}

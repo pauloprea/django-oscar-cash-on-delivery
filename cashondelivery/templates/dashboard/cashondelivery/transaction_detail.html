@@ -34,7 +34,7 @@
             <tr><th>{% trans "Amount" %}</th><td>{{ txn.amount|default:"-" }}</td></tr>
             <tr><th>{% trans "Currency" %}</th><td>{{ txn.currency }}</td></tr>
             <tr><th>{% trans "Confirmed" %}</th><td>{{ txn.confirmed }}</td></tr>
-            <tr><th>{% trans "Date confirmed" %}</th><td>{{ txn.date_confirmed }}</td></tr>
+            <tr><th>{% trans "Date confirmed" %}</th><td>{% if txn.confirmed %}{{ txn.date_confirmed }}{% else %} - {% endif %}</td></tr>
         </tbody>
     </table>
 {% endblock dashboard_content %}

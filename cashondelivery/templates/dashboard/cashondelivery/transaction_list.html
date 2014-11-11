@@ -14,7 +14,7 @@
             <span class="divider">/</span>
         </li>
         <li>
-            <a href="{% url 'cashondelivery-transaction-list' %}">{% trans "Cash on Delivery" %}</a>
+            <a href="{% url 'dashboard:cashondelivery-transaction-list' %}">{% trans "Cash on Delivery" %}</a>
             <span class="divider">/</span>
         </li>
         <li class="active">{% trans "Transactions" %}</li>
@@ -43,7 +43,7 @@
             <tbody>
                 {% for txn in transactions %}
                     <tr>
-                        <td><a href="{% url 'cashondelivery-transaction-detail' txn.id %}">{{ txn.reference|default:"-" }}</a></td>
+                        <td><a href="{% url 'dashboard:cashondelivery-transaction-detail' txn.id %}">{{ txn.reference|default:"-" }}</a></td>
                         <td>{{ txn.method }}</td>
                         <td><a href="{% url 'dashboard:order-detail' number=txn.order_number %}">{{ txn.order_number|default:"-" }}</a></td>
                         <td>{{ txn.amount|currency|default:"-" }} {{ txn.currency }}</td>

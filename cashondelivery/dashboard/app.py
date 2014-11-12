@@ -8,6 +8,8 @@ from . import views
 
 class CashOnDeliveryDashboardApplication(Application):
     name = None
+    default_permissions = ['is_staff', ]
+
     list_view = views.TransactionListView
     detail_view = views.TransactionDetailView
 
@@ -19,9 +21,6 @@ class CashOnDeliveryDashboardApplication(Application):
                 name='cashondelivery-transaction-detail'),
         )
         return self.post_process_urls(urlpatterns)
-
-    def get_url_decorator(self, url_name):
-        return staff_member_required
 
 
 application = CashOnDeliveryDashboardApplication()

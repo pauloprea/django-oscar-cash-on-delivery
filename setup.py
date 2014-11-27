@@ -13,7 +13,7 @@ setup(name='django-oscar-cash-on-delivery',
       license='BSD',
       packages=find_packages(exclude=['sandbox*', 'tests*']),
       include_package_data=True,
-      install_requires=['django-oscar>=0.6.4,<0.8'],
+      install_requires=['django-oscar>=0.6.4,<1.1'],
       # See http://pypi.python.org/pypi?%3Aaction=list_classifiers
       classifiers=['Environment :: Web Environment',
                    'Framework :: Django',

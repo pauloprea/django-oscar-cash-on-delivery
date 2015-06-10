@@ -11,11 +11,9 @@
     <ul class="breadcrumb">
         <li>
             <a href="{% url 'dashboard:index' %}">{% trans "Dashboard" %}</a>
-            <span class="divider">/</span>
         </li>
         <li>
-            <a href="{% url 'cashondelivery-transaction-list' %}">{% trans "Cash on Delivery" %}</a>
-            <span class="divider">/</span>
+            <a href="{% url 'dashboard:cashondelivery-transaction-list' %}">{% trans "Cash on Delivery" %}</a>
         </li>
         <li class="active">{% trans "Transactions" %}</li>
     </ul>
@@ -43,12 +41,12 @@
             <tbody>
                 {% for txn in transactions %}
                     <tr>
-                        <td><a href="{% url 'cashondelivery-transaction-detail' txn.id %}">{{ txn.reference|default:"-" }}</a></td>
+                        <td><a href="{% url 'dashboard:cashondelivery-transaction-detail' txn.id %}">{{ txn.reference|default:"-" }}</a></td>
                         <td>{{ txn.method }}</td>
                         <td><a href="{% url 'dashboard:order-detail' number=txn.order_number %}">{{ txn.order_number|default:"-" }}</a></td>
                         <td>{{ txn.amount|currency|default:"-" }} {{ txn.currency }}</td>
-                        <td>{{ txn.confirmed|default:'-' }}</td>
-                        <td>{{ txn.date_confirmed|default:'-' }}</td>
+                        <td>{{ txn.confirmed }}</td>
+			<td>{% if txn.confirmed %}{{ txn.date_confirmed }}{% else %} - {% endif %}</td>
                         <td>{{ txn.date_created }}</td>
                     </tr>
                 {% endfor %}

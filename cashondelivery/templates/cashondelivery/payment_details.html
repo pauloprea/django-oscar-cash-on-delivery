@@ -14,10 +14,8 @@
 {% block order_contents %}{% endblock %}
 {% block shipping_address %}{% endblock %}
 {% block shipping_method %}{% endblock %}
-{% block payment_method %}
-{% endblock %}
 
-{% block payment %}
+{% block payment_method %}
     
     <p>{% trans "You've chosen to pay cash on delivery." %}</p>
 
@@ -62,7 +60,8 @@
         </div>           
     </div>
 
-{% endblock payment %}
+{% endblock payment_method %}
+
 
 {% block onbodyload %}
     {# Toggle visibility of the billing address form #}

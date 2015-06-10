@@ -62,28 +62,10 @@ class PaymentDetailsView(PaymentDetailsView):
         return self.render_payment_details(
             request, billing_address_form=address_form)
 
-    def handle_place_order_submission(self, request):
-        billing_address = self.get_billing_address(self.get_shipping_address(
-            self.request.basket))
-        if billing_address:
-            submission = self.build_submission(
-                order_kwargs={
-                    'billing_address': billing_address,
-                }
-            )
-            return self.submit(**submission)
-
-        # Must be DOM tampering as these forms were valid and were rendered in
-        # a hidden element.  Hence, we don't need to be that friendly with our
-        # error message.
-        messages.error(request, _("Invalid submission"))
-        return http.HttpResponseRedirect(
-            reverse('checkout:payment-details'))
-
     def handle_payment(self, order_number, total, **kwargs):
         reference = gateway.create_transaction(order_number,total)
         source_type, is_created = SourceType.objects.get_or_create(
-            name=_('Cash on Delivery'))
+            name='Cash on Delivery')
         source = Source(source_type=source_type,
                         currency=total.currency,
                         amount_allocated=total.incl_tax,
